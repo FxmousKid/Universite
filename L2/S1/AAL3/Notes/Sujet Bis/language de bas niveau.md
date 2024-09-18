@@ -1,0 +1,1 @@
+Un language de ==bas niveau== est un language qui se rapproche plus du code machine, qui offre presque aucune abstraction.
