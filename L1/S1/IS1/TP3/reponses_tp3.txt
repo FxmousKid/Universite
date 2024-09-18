@@ -1,0 +1,72 @@
+IYAN NAZARIAN
+
+(travailler integralement sur mon mac personnel)
+
+Exercice 1 :
+
+1) ls -i -d *[aeiouy]
+
+2) 6490028
+
+3) oui
+
+5) ln fifi rifi
+
+6) oui ils ont le meme contenu, oui ils ont le meme numero d'inoeud appart gontran
+
+7) echo "J'ai un avantage sur toi, cousin, ma chance" > gontran 
+   cat riri fifi loulou gontran
+
+8) on peut expliquer ce phenomene a travers le faite que riri, fifi, et loulou sont des 
+  liens dure qui pointent au meme inoeud, si l'on execute "find . -samefile loulou" on 
+  obtient ./riri et ./fifi et (bien sur) ./loulou . donc on peut voir que c'est normal 
+  qu'un tel phenome ce passe
+
+9) ln riri loulou (ou ln fifi loulou)
+
+Exercice 2 :
+
+1) mon groupe d'appartenance : uid=501 (user) 
+   groupe d'appartenance root : uid=0 (root)
+
+Exercice 3 :
+
+1) find . -maxdepth 1 -type f -name '*[0-9]*' | wc -l
+   avec un resultat de 7 
+
+2) ls -p -S -d [^A-Z]* | grep -v / 
+   stat -x picsou
+   avec un resultat de 51 bytes
+
+3) ls -Ur -d *[0-9]* 
+   et on recoit DDx_ZtH
+
+4) stat -x fifi | grep Links 
+   nous renvoie la ligne qui nous indique qu'il y a 3 lien a fifi
+   cela n'est pas surprenant vu que riri et loulou possede autant de liens que fifi, vu
+   que c'est des liens dure vers le meme inoeud
+
+5) stat -x CoffreDePicsou | grep Links 
+   nous renvoie 9 
+   cela s'explique a travers le faite que ce dossier a plusieurs liens dure 
+   qui lui font reference, donc il est accessible de plusieurs endroits dans ma 
+   partition actuelle (limite de la juridiction d'un lien dur)
+
+Exercice 4: 
+ 
+1) je constate que comme j'ai la permission de lire, je peux executer cat, et l'ouvrir 
+   dans un editeur de texte, mais je ne peux pas le modifier, que ce sois avec l'editeur
+   ou avec echo
+
+2) je constate que j'ai la permission d'ecrire dans le fichier, sans pouvoir le lire, ce 
+   qui est assez rare, donc je ne peux l'ouvrir avec cat, mais je peux le modifier avec
+   echo par exemple
+
+3) Si j'essaye d'executer le fichier tata, sa ne va pas marcher vu que je n'ai pas la 
+   execute permission, contrairement a toto, qui quand je l'execute me renvoie "Bonjour 
+   User!"
+
+4) j'en conclue que le fichier tutu, lorsqu'executer, me renvoie le temps en format
+   d'heure d'ete europeene centrale.
+
+5) 

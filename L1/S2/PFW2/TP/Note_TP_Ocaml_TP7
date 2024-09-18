@@ -1,0 +1,82 @@
+1) Sort the item list by density in a separate List
+2) Iterate over that list while weight + tot_weight <= capacity
+3) Create the enregistrement according
+
+2.1) Make a auxiliary function like :
+     get_chosen_items (items <- item list, capacity <- int)
+        ....
+        returns the list containing all item IDs that fit with capacity 
+
+2.2) Based on the return of get_chosen_items, take it's length, and
+   iterate this many times on the sorted array of items and sum
+   the values.
+
+3) Based on those 2 values, make the enregistrement.
+
+
+
+TP7 : RECHERCHE EXHAUSTIVE
+
+explore : int -> item list -> int list -> int -> int -> solution
+
+function solution explore (capacity : int,
+                           undecided_items : item list,
+                           chosen_items : int list,
+                           current_value : int,
+                           current_weight : int)
+
+avec : 
+ - capacity : Le poids maximal autoriser
+ - undecided_items : Les objects qu'on ne sait pas si on veut inclure
+ - chosen_items : la liste des IDs des objects choisie
+ - current_value : valeur total des objects de chosen_items
+ - current_weight : poids total des objects de chosen_items
+
+Sachant que :
+ - Si current_weight <= capacity : 
+   explore renvoie la solution avec la valeur la plus grande (optimale)
+   des solutions composes de : 
+     - tout les element de chosen_items <- les elements "guarantis"
+     - + Certains elements de undecided_items, en se basant sur les
+     meuilleur elements qu'on peux ajouter.
+
+Tips pour ecrire explore : 
+ - if current_weight > capacity then return empty solution
+ - if undecided_items = [] then return the solution made of chosen_items
+ - else :
+   1) faire un match sur undecided_items : | item :: other_undecided
+   2) rappeler explore pour trouver la solution optimale qui contient item
+   3) rappeler exploire encore une fois pour trouver la solution optimale
+   parmis les solutions qui ne contiennent pas item 
+   4) prendre la meuilleur des 2 (max ( 2) ).total_value ( 3) ).total_value)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 pt Wrong value {total_value = 294; chosen_items = [4; 2; 7; 8; 9; 1]}
+
+
+
+

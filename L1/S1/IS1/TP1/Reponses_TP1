@@ -1,0 +1,28 @@
+Iyan Nazarian, INFO6, Numero etudiant 2230875, Salle 548C
+
+Exercice 2 :
+
+
+1. "date -u" pour avoir le temps en UTC
+
+2. "date +%s" poour avoir  1695125083
+
+3. "date -r 1234567890 " Fri Feb 13 23:31:30 UTC 2009
+
+4. probleme de compatibilite avec mac
+
+5. "date -r /etc" pour la reference
+
+Exercice 3
+
+
+3. /Users/user/Desktop/TP_system_Exploitations/Amstrad/Univac/Serel/IBM
+
+
+Exercice 4 
+
+2. mkdir Test ; cd Test ; touch titi
+
+3. mkdir Cours ; cd Cours ; mkdir 2022 ; cd 2022 ; mkdir PF1 IS1 IP1 ; cd IS1 ; mkdir TP1
+
+

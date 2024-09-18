@@ -1,0 +1,63 @@
+1701692572432	geckodriver	INFO	Listening on 127.0.0.1:49729
+1701692573437	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/6c/wm1y9zw919ncj6n57ckbpv880000gn/T/rust_mozprofileMZ21ZO"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+2023-12-04 13:22:54.148 firefox-bin[34575:16477767] WARNING: Secure coding is not enabled for restorable state! Enable secure coding by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState: and returning YES.
+1701692574277	Marionette	INFO	Marionette enabled
+1701692574509	Marionette	INFO	Listening on port 49736
+Read port: 49736
+1701692574681	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+JavaScript warning: https://web.whatsapp.com/main.09aa8246bb66447e103e.js, line 5: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/main.09aa8246bb66447e103e.js, line 5: unreachable code after return statement
+1701692604308	addons.xpi	ERROR	System addon update list error SyntaxError: The URI is malformed.
+JavaScript warning: https://web.whatsapp.com/main.09aa8246bb66447e103e.js, line 5: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/main.09aa8246bb66447e103e.js, line 5: unreachable code after return statement
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+console.error: (new TypeError("parent is null", "resource://devtools/client/inspector/shared/style-change-tracker.js", 67))
+TypeError: parent is null: canMutationImpactCurrentStyles@resource://devtools/client/inspector/shared/style-change-tracker.js:67:24
+onMutations@resource://devtools/client/inspector/shared/style-change-tracker.js:84:41
+_emit@resource://devtools/shared/event-emitter.js:242:32
+emit@resource://devtools/shared/event-emitter.js:186:18
+emit@resource://devtools/shared/event-emitter.js:330:18
+getMutations@resource://devtools/client/fronts/walker.js:309:10
+
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2396))
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1701693681116	geckodriver	INFO	Listening on 127.0.0.1:49930
+1701693682132	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/6c/wm1y9zw919ncj6n57ckbpv880000gn/T/rust_mozprofileIagcsD"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+2023-12-04 13:41:22.602 firefox-bin[35289:16520948] WARNING: Secure coding is not enabled for restorable state! Enable secure coding by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState: and returning YES.
+1701693682748	Marionette	INFO	Marionette enabled
+1701693682892	Marionette	INFO	Listening on port 49937
+Read port: 49937
+1701693683086	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+JavaScript warning: https://web.whatsapp.com/main.09aa8246bb66447e103e.js, line 5: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/main.09aa8246bb66447e103e.js, line 5: unreachable code after return statement
+1701693712811	addons.xpi	ERROR	System addon update list error SyntaxError: The URI is malformed.
+1701693933889	Marionette	INFO	Stopped listening on port 49937
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1701696768195	geckodriver	INFO	Listening on 127.0.0.1:50133
+1701696768218	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/6c/wm1y9zw919ncj6n57ckbpv880000gn/T/rust_mozprofileJOYqOw"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+2023-12-04 14:32:48.788 firefox-bin[36932:16592231] WARNING: Secure coding is not enabled for restorable state! Enable secure coding by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState: and returning YES.
+1701696768969	Marionette	INFO	Marionette enabled
+1701696769161	Marionette	INFO	Listening on port 50138
+Read port: 50138
+1701696769359	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+JavaScript warning: https://web.whatsapp.com/main.09aa8246bb66447e103e.js, line 5: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/main.09aa8246bb66447e103e.js, line 5: unreachable code after return statement
+1701696799003	addons.xpi	ERROR	System addon update list error SyntaxError: The URI is malformed.
+JavaScript warning: https://web.whatsapp.com/main.09aa8246bb66447e103e.js, line 5: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/main.09aa8246bb66447e103e.js, line 5: unreachable code after return statement
+1701712176729	Marionette	INFO	Stopped listening on port 50138

@@ -1,0 +1,77 @@
+iyan NAZARIAN
+
+Exercice 1 :
+
+2)
+  a) chmod u+x,g+x,o+x titi
+  b) chmod a=r,u+x titi
+  c) chmod a=r titi
+  d) chmod a=-,g+r titi
+  e) chmod a=-,u+wx,g+x,o+r titi 
+  f) chmod u-x,o+x titi
+
+Exercice 2 :
+
+1) chmod 444 A/toto
+2) chmod 735 A/tutu
+3) chmod 561 A/toto
+4) chmod 215 A/tutu
+5) chmod 644 A/toto
+6) chmod 310 A/tutu
+
+Exercice 3 : 
+
+1) chmod a=r,u+x A/toto
+2) chmod 624 A/tutu
+3) chmod 216 B/toto
+4) chmod g+x,o+x B/tutu
+5) chmod -R 254 C
+6) chmod -R u+x */tutu
+7) chmod -R 640 */toto
+
+Exercice 4 :
+
+1) on constate que l'on ne peut plus execute le fichier, et on peut dire que
+   cela est due au faite que le fichier a execute est un script, et donc pour 
+   savoir quelle commande execute, il faut que le system soit capable de lire 
+   le fichier 
+
+2) comme mentionner precedent, un fichier text qui peut s'execute est considere
+   un script vu qu'il contient une ligne de commande, ou plusieurs meme, qui 
+   produisent un resultat (ou pas) lorsqu'elles sont passer a travers bash, 
+   ou l'interpreteur python, etc...
+
+Exercice 5 :
+
+1) si je n'ai pas le droit de lecture sur un repertoire, je peux y acceder,
+   mais je ne peux pas voir les fichiers (ou dossiers) qu'il contient, c'est
+   comme entrer dans une grotte avec un bandau sur les yeux...
+
+2) je peux conclure que le droit d'ecriture sur un repertoire gouverne notre
+   capacite a bouger un fichier, le renommer, le supprimer, jouer avec les
+   metadonnes des fichiers qui y sont presents
+
+3) on peux dire que le droit d'execution des repertoire gouverne notre 
+   accessibilite au repertoire lui meme ainsi qu'aux metadonnes des fichiers
+   qui y sont dedans, et meme si on a les droits d'ecriture sur le repertoire,
+   si l'on a pas le droit d'execution, on ne peut faire grand choses.
+
+4) on peut dire que le droit en lecture nous permet d'acceder a la liste des 
+   fichiers ainis que leur metadonnes, tandis que le droit d'execution nous
+   permet d'execute les fichiers. si nous n'avons pas les droits d'ecriture,
+   nous pouvons quand meme acceder au repertoire et voir les fichiers qui
+   y sont presents, et vice versa.
+
+5) chmod u+x C
+
+6) mv C/toutou B
+
+7) chmod u+r D
+
+8) sudo rm -rf D
+
+Exercice 7 :
+ 
+2) on peut en conclure que le voisin qui a access a mon repertoire peut bel et bien faire toutes ces operations, appart copier, vu que sans les droits de lecture, copier un fichier (qui se recule a lire sont contenue ne peut pas fonctionner)
+
+3) chmod u=x,g=rw nazariani
