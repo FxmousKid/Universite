@@ -1,0 +1,76 @@
+Iyan Nazarian
+
+Exercice 1:
+
+1. grep -E 'Odette' swann.txt
+
+2. grep -Ec 'Odette' swann.txt
+= 449
+
+3. grep -Ec 'Gilberte' swann.txt
+= 99
+
+4. grep -Eo 'Gilberte' swann.txt | wc -l
+= 100
+
+5. grep -En 'Gilberte.*Gilberte' swann.txt
+renvoie la ligne 15397 qui contient 2x Gilbert
+
+6. grep -Ec 'Gilberte|Odette' swann.txt
+= 547
+
+7. grep -En 'Gilberte.*Odette|Odette.*Gilberte' swann.txt
+renvoie la ligne 15526 qui contient Odette puis Gilberte
+Donc 449 + 99 - 1 = 547
+
+8. grep -Ec '\+' swann.txt
+= 0
+   grep -Ec '\?' swann.txt
+= 274
+
+9. grep -Ec '[[:digit:]]' swann.txt
+ou grep -Ec '[0-9]' swann.txt
+= 7
+
+10. grep -Ec 'z[a-z]' swann.txt
+ou  grep -Ec 'z[[:lower:]]' swann.txt
+= 114
+
+11. grep -Ec 'z[^a-z]' swann
+ou  grep -Ec 'z[^[:lower:]]' swann.txt
+= 752
+
+12. grep -Ec '\?$' swann.txt
+= 44
+
+13. grep -Ec '\<(a|A)b' swann.txt
+= 230
+
+14. grep -Ec '«[^»]*$' swann.txt
+(on verifie uniquement qu'on ouvre les guillements et qu'on arrive a la fin
+de la ligne sans avoir vu les guillemets de fin)
+= 577
+
+15. grep -Ec '^«[^»]*$' swann.txt
+= 37
+
+16. grep -Ec '(,.*){5,}' swann.txt
+= 17
+
+17. grep -E '[a-zA-Z]{17,}' swann.txt | wc -l
+ou  grep -E '[[:lower:][:upper:]]{17,}' swann.txt | wc -l
+= 19
+
+
+Exercic 2 :
+
+1. grep -Ec '([aeiouy])(.*\1){14,}' swann.txt
+= 20
+2. grep -Ec '([a-zA-Z]{10,})(.*\1){1,}' swann.txt
+= 19
+3. grep -Ec '^(\w+)\b.*\b\1\b$' swann.txt
+= 81
+4. grep -Ec '\b(\w)(\w)(\w)\b.*\b(\3\2\1)\b' swann.txt
+ou grep -Ec '\<(\w)(\w)(\w)\>'
+= 42
+
