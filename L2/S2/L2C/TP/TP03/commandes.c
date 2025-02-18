@@ -89,7 +89,6 @@ void	expedie_tout(t_commande tab[], size_t size)
 
 	while (idx < size)
 		tab[idx++].etat = EXPEDIEE;
-	
 }
 
 int main(void)

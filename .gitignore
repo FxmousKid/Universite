@@ -8,3 +8,4 @@
 **.iml
 **.vscode
 **.metals
+__pycache__/
