@@ -8,6 +8,7 @@ typedef struct s_mutation {
 }			t_mutation;
 
 
+// Cast en unsigned par convention ; check STRCMP(3)
 int	strcmp_n(const char *s1, const char *s2, int n)
 {
 	unsigned char	*str1;
