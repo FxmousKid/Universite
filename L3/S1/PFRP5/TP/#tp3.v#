@@ -1,0 +1,183 @@
+
+(* TP3 : Fonctions sur les listes Coq *)
+(* L3 PFRP *)
+
+Require Import List Bool Arith Lia.
+Import ListNotations.
+
+Print list.
+(* Rappel :
+
+Inductive list A :=
+ | nil : list A
+ | cons : A -> list A -> list A.
+
+Et dans nil est cons, le paramètre A est implicite, ne pas l'écrire.
+On dispose aussi des notations usuelles, par exemple *)
+Check [1;2;3].
+Check 1::2::nil.
+
+(* Exercice 1 : Map *)
+
+(* Q1: Retrouver la définition de la fonction map qui applique une
+   fonction f de type A -> B à chaque élément d'une liste. *)
+
+Fixpoint map {A B} (l1: list A) (f: A->B) : (list B) :=
+  match l1 with
+  | [] => []
+  | x :: xs => (f x) :: map xs f
+  end.
+
+(* Q2: Prouver que la longueur du résultat de map est la
+  longueur de la liste originale. *)
+
+
+(*
+Fixpoint length {A} (l: list A) : nat :=
+  match l with
+  | nil => 0
+  | _ :: xs => S (length xs)
+  end.
+*)
+
+Lemma map_length {A B} (l: list A) (f: A->B) :
+  length (map l f) = length l.
+Proof.
+  induction l. simpl.
+  - easy.
+  - simpl. rewrite IHl. reflexivity.
+Qed.
+
+(* Q3: Définir une fonction compose qui produit la composition
+   (f ∘ g) de deux fonctions f et g passées en paramètre.
+   Son type sera donc : forall {A B C}, (B->C)->(A->B)->(A->C).
+   S'assurer que les paramaètres de type A B C sont implicites. *)
+
+Definition compose {A B C} (f: B->C) (g: A->B) : (A->C) :=
+  fun a => f (g a).
+
+(* Q4: Démontrer que la composition est associative, c'est-à-dire que
+  f ∘ (g ∘ h) = (f ∘ g) ∘ h. (Indication: unfold pourra être utile). *)
+
+Lemma compose_assoc {A B C D} (f: C->D) (g: B->C) (h: A->B) :
+  compose f (compose g h) = compose (compose f g) h.
+Proof.
+  
+
+(* Q5: Démontrer que:
+   forall A B C, forall (f: B->C)(g: A->B)(l: list A),
+    map (compose f g) l = map f (map g l). *)
+
+
+(* Exercice 2 : Renversement *)
+
+(* Le renversement d'une liste est aussi nommé miroir de cette liste *)
+
+(* Q1: Retrouver la définition de la fonction app qui concatène deux
+   listes. On pourra ensuite utiliser la définition du système et
+   sa notation infixe ++. Rappel: les lemmes vus en cours sur app
+   se nomment length_app app_nil_r app_assoc in_app_iff *)
+
+(* Q2: En utilisant la fonction app, écrire une première fonction rev
+   qui inverse l'ordre des éléments d'une liste.  *)
+
+(* Q3: Prouver que rev (l1++l2) = rev l2 ++ rev l1. *)
+
+(* Q4: Démontrer que rev (rev l) = l. *)
+
+(* Q5: Démontrer que pour tout élément x, In x (rev l) <-> In x l. *)
+
+(* Q6: Ecrire directement une fonction revapp telle que revapp l1 l2
+   soit la concaténation du renversement de l1 avec l2. N'utiliser
+   ni app ni rev dans cette définition. Indication: revapp utilise
+   la recursivité terminale. *)
+
+(* Q7: Prouver forall l1 l2, revapp l1 l2 = rev l1 ++ l2.
+   Indication: attention à bien généraliser les variables nécessaires
+   lors de la récurrence, p.ex. via revert. *)
+
+(* Q8: En déduire une définition alternative rev' du retournement
+   d'une liste, basée sur revapp. Prouver que rev' et rev produisent
+   toujours le même résultat. Quelle est l'avantage de rev' sur rev ? *)
+
+(* Facultatif: adapter à revapp et rev' les questions Q3 Q4 Q5 et en
+   faire des preuves n'utilisant pas rev. Comparer avec Q3 Q4 Q5. *)
+
+
+(* Exercise 3 : Fold right (et left) *)
+
+(* NB : Dans cet exercice, l'ordre des arguments de foldr et foldl
+   suit celui des arguments des fonctions correspondantes d'OCaml,
+   List.fold_right et List.fold_left. Ces fonctions fold_right et
+   fold_left existent aussi dans le module List de Coq, mais avec
+   un autre ordre des arguments (echanger liste et valeur initiale). *)
+
+(* Q1: Ecrire une fonction foldr qui, à partir d'une fonction
+  f:A->B->B, d'une liste [x1;x2;..;xn]:list A et d'une valeur z:B,
+  calcule:  f x1 (f x2 (f ... (f xn z) ...)) *)
+
+(* Q2: Démontrer que foldr f (l1++l2) z = foldr f l1 (foldr f l2 z). *)
+
+(* Q3: Définir à l'aide de foldr une fonction map' se comportant comme
+   map. Prouver l'égalité des résultats de map et map'. *)
+
+(* Q4: Même question pour une fonction app' se comportant comme la
+   concaténation app. *)
+
+(* Q5: Ecrire une fonction foldl qui, à partir d'une fonction
+  f:A->B->A, d'une valeur z:A et d'une liste [x1;x2;..;xn]:list B,
+  calcule: (f (...((f z x1) x2) ...) xn) *)
+
+(* Q6: Définir à l'aide de foldl une fonction revapp' se comportant
+   comme la fonction revapp de l'exercice 2. Prouver l'égalité
+   des résultats de revapp et revapp'. *)
+
+(* Fonction auxiliaire échangeant l'ordre des arguments de f: *)
+Definition flip {A B C} (f:A->B->C) : B -> A -> C := fun b a => f a b.
+
+(* Q7: Démontrer que foldr f (rev l) z = foldl (flip f) z l.
+   Indication: attention de nouveau à la généralité des variables
+   lors de la récurrence (revert si besoin). *)
+
+
+(* Exercice 4 : zip et unzip *)
+
+(* NB: les noms zip et unzip viennent de Haskell, autre langage
+   fonctionnel. Dans les modules List de Coq et d'OCaml, ces fonctions
+   s'appellent combine et split. *)
+
+(* Q1: Définir une fonction zip qui prend en paramètre deux listes
+  et construit une liste des couples d'éléments aux mêmes positions.
+  Le résultat ne devra être plus long que la plus courte des listes.
+  Par exemple: zip [1;2;3] [11;12] = [(1,11);(2;12)].
+*)
+
+(* Q2: Démontrer que
+     length (zip l1 l2) = Nat.min (length l1) (length l2).
+   et du coup:
+     length (zip l1 l2) = length l1 \/ length (zip l1 l2) = length l2.
+   Indication: le solver lia sait raisonner sur les minimums. *)
+
+(* Q3: Démontrer que
+    zip (map f1 l1) (map f2 l2) = map (prodf f1 f2) (zip l1 l2)
+   après avoir donné une définition appropriée de prodf.
+  Indication: fst et snd extraie les éléments d'un couple. Vous pouvez
+  aussi utiliser directement (match p with (x, y) => ... end) ou même
+  (let '(x,y) := p in ...) pour décomposer un couple p. *)
+
+(* Q4: Définir la fonction unzip, de type A*B -> list A * list B,
+  qui scinde une liste de couples en un couple de listes.
+  Même indication qu'à la question précédente. *)
+
+(* Q5: Démontrer que length (fst (unzip l)) = length l et de même avec
+  snd. Indication: pour décomposer un couple p tout en gardant
+  une équation entre la version décomposée et p, utiliser
+  destruct p eqn:H. *)
+
+(* Q6: Démontrer que zip appliqué aux résultats de unzip produit
+   la liste initiale. Indication: injection transforme une égalité
+   entre couple en deux égalités. *)
+
+(* Facultatif: prouver que unzip appliqué au résultat d'un zip
+   ramène au point de départ, au moins dans certains cas favorables
+   à déterminer. *)
