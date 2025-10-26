@@ -137,7 +137,17 @@ Rendre son mini-projet
      https://moodle.u-paris.fr/mod/choicegroup/view.php?id=82687
    et `nom1` et `nom2` sont les noms de famille des deux membres du
    binôme, contenant l'arborescence suivante :
-     XX-nom1-nom2/dpll.ml
-     XX-nom1-nom2/dimacs.ml
-     XX-nom1-nom2/Makefile
+     
+     ```
+     XX-nom1-nom2/bin/
+     XX-nom1-nom2/lib/dimacs.ml
+     XX-nom1-nom2/lib/dimacs.mli
+     XX-nom1-nom2/lib/dpll.ml
+     XX-nom1-nom2/lib/dpll.mli
+     XX-nom1-nom2/lib/dune
+     XX-nom1-nom2/test/dune
+     XX-nom1-nom2/test/test_dpll_solver.ml
+     XX-nom1-nom2/dpll_solver.opam
+     XX-nom1-nom2/dune-project
      XX-nom1-nom2/RENDU
+     ```

@@ -30,3 +30,5 @@ val solveur_split : cnf -> resultat
     Cette fonction utilise l'algorithme DPLL.
     *)
 val solveur_dpll : cnf -> resultat
+
+val simplifie : literal -> cnf -> cnf
